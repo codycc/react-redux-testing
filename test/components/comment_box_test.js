@@ -3,6 +3,12 @@ import {renderComponent, expect } from '../test_helper';
 import CommentBox from '../../src/components/comment_box';
 
 describe('CommentBoxTest', () => {
+
+  it('has the correct class',() => {
+    const component = renderComponent(CommentBox);
+    expect(component).to.have.class('comment-box');
+  });
+
   it('has a text area', ()=> {
     const component = renderComponent(CommentBox);
     //The way chai is set up , parameters arent needed in this case no exist();
