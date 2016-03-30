@@ -14,7 +14,7 @@ describe('CommentBoxTest', () => {
     expect(component).to.have.class('comment-box');
   });
 
-  it('has a text area', ()=> {
+  it('has a text area', () => {
     //The way chai is set up , parameters arent needed in this case no exist();
     expect(component.find('textarea')).to.exist;
   });
