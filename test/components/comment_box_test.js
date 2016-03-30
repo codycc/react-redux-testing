@@ -3,20 +3,23 @@ import {renderComponent, expect } from '../test_helper';
 import CommentBox from '../../src/components/comment_box';
 
 describe('CommentBoxTest', () => {
+  // using chai JQuery to select specific peices
+  let component; //starts as undefined
+  //move into before each, for DRY
+  beforeEach(()=> {
+   component = renderComponent(CommentBox);
+  });
 
   it('has the correct class',() => {
-    const component = renderComponent(CommentBox);
     expect(component).to.have.class('comment-box');
   });
 
   it('has a text area', ()=> {
-    const component = renderComponent(CommentBox);
     //The way chai is set up , parameters arent needed in this case no exist();
     expect(component.find('textarea')).to.exist;
   });
 
   it('has a button', () => {
-    const component = renderComponent(CommentBox);
     expect(component.find('button')).to.exist;
 
   });
